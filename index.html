@@ -37,14 +37,14 @@
                             header: "Каталог",
                             width: "17%",
                             collapsable: true,
-                            resizable:true
+                            resizable: true
                         },
                         {
                             id: "content",
                             /* html: "Content", */
                             header: "Товары",
                             collapsable: true,
-                            resizable:true
+                            resizable: true
                         },
                         {
                             id: "rightbar",
@@ -52,14 +52,14 @@
                             header: "Акции!!!",
                             width: "15%",
                             collapsable: true,
-                            resizable:true
+                            resizable: true
                         },
                     ]
                 },
                 {
                     id: "footer",
-                   /*  html: "Footer", */
-                   header: "О компании",
+                    /*  html: "Footer", */
+                    header: "О компании",
                     height: "50px"/* ,
                     collapsable: true */
                 }
@@ -79,29 +79,29 @@
         });
         layout.getCell("sidebar").attach(sidebar);
 
-       /*  // /* dataview */
-       function template(item) {
-				var template = "<div class='item_wrap'>";
-				template += "<img class='image' src='../common/images/" + item.thumbnailName + "'/>";
-				template += "<h2 class='title'>" + item.value + "</h2>";
-				template += "<p class='description'>" + item.shortDescription + "</p>";
-				template += "</div>";
-				return template;
-			}
+        /*  // /* dataview */
+        function template(item) {
+            var template = "<div class='item_wrap'>";
+            template += "<img class='image' src='../common/images/" + item.thumbnailName + "'/>";
+            template += "<h2 class='title'>" + item.value + "</h2>";
+            template += "<p class='description'>" + item.shortDescription + "</p>";
+            template += "</div>";
+            return template;
+        }
 
-       var datav = new dhx.TreeCollection();
-        datav.load("../samples/dataview/common/books.json"); 
- 
+        var datav = new dhx.TreeCollection();
+        datav.load("../samples/dataview/common/books.json");
+
         var dataview = new dhx.DataView(null, {
-            itemsInRow: 2,
-				gap: 10,
-				css: "dhx_widget--bordered dhx_widget--no-border_right",
-				template: template,
-                data: datav
+            itemsInRow: 3,
+            gap: 8,
+            css: "dhx_widget--bordered dhx_widget--no-border_right",
+            template: template,
+            data: datav
         });
 
-        
-        layout.getCell("content").attach(dataview); 
+
+        layout.getCell("content").attach(dataview);
 
     </script>
 </body>
