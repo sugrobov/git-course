@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- meta block -->
+    <title>Прайс-лист</title>
+    <meta name="description" content="Скрипт прайс-листа">
+    <!-- end meta block -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <script type="text/javascript" src="../codebase/suite.js?v=7.1.2"></script>
+    <link rel="stylesheet" href="../codebase/suite.css?v=7.1.2">
+    <link rel="stylesheet" href="../samples/common/index.css?v=7.1.2">
+    <link rel="stylesheet" href="../samples/layout/common/layout.css?v=7.1.2">
+
+    <!-- custom sample head -->
+    <!-- Tishka -->
+</head>
+
+
+<body>
+
+    <!-- <div class="dhx_sample-container__widget" id="layout"></div> -->
+    
+   
+        <script>
+          var layout = new dhx.Layout({width:"400px", height:"600px"});
+ 
+ var list = new dhx.List(null, {
+     template: listTemplate,
+     itemHeight: 52,
+     height: "100%",
+     dragMode: "both"
+ });
+  
+ list.data.load('../samples/sidebar/common/struct.json');
+  
+ layout.getCell("list").attach(list);
+    </script>
+</body>
+
+</html>

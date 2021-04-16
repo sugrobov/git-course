@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- meta block -->
+    <title>Прайс-лист</title>
+    <meta name="description" content="Скрипт прайс-листа">
+    <!-- end meta block -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <script type="text/javascript" src="../codebase/suite.js?v=7.1.2"></script>
+    <link rel="stylesheet" href="../codebase/suite.css?v=7.1.2">
+    <!-- <link rel="stylesheet" href="../samples/common/index.css?v=7.1.2"> -->
+    <link rel="stylesheet" href="../samples/layout/common/layout.css?v=7.1.2">
+
+    <!-- custom sample head -->
+</head>
+
+
+<body>
+
+    <div class="dhx_sample-container__widget" id="layout"></div>
+    <script>
+        var config = {
+            type: "line",
+            rows: [
+                {
+                    id: "toolbar",
+                    html: "Header",
+                    height: "50px"/* ,
+                    collapsable: true */
+                },
+                {
+                    cols: [
+                        {
+                            id: "sidebar",
+                            /* html: "Каталог", */
+                            header: "Каталог",
+                            width: "17%",
+                            collapsable: true,
+                            resizable:true
+                        },
+                        {
+                            id: "content",
+                            /* html: "Content", */
+                            header: "Товары",
+                            collapsable: true,
+                            resizable:true
+                        },
+                        {
+                            id: "rightbar",
+                            /* html: "Aside", */
+                            header: "Акции!!!",
+                            width: "15%",
+                            collapsable: true,
+                            resizable:true
+                        },
+                    ]
+                },
+                {
+                    id: "footer",
+                   /*  html: "Footer", */
+                   header: "О компании",
+                    height: "50px"/* ,
+                    collapsable: true */
+                }
+            ]
+        };
+        /* layout */
+        var layout = new dhx.Layout("layout", config);
+
+        /* sidebar */
+        var data = new dhx.TreeCollection();
+        data.load("../samples/sidebar/common/struct.json");
+
+        var sidebar = new dhx.Sidebar(null, {
+            id: "sidebar",
+            css: "dhx_widget--border_right",
+            data: data
+        });
+        layout.getCell("sidebar").attach(sidebar);
+
+       /*  // /* dataview */
+        /* var dataview = new dhx.DataView(null, {
+            itemsInRow: 5
+        });
+         layout.getCell("content").attach(dataview); 
+ */
+    </script>
+</body>
+
+</html>
