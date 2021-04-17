@@ -85,7 +85,7 @@
         function template(item) {
             var template = "<div class='item_wrap'>";
             template += "<img class='image' src='../common/images/" + item.thumbnailName + "'/>";
-            template += "<h2 class='title'>" + item.value + "</h2>";
+            template += "<h4 class='title'>" + item.value + "</h4>";
             template += "<p class='description'>" + item.shortDescription + "</p>";
             template += "</div>";
             return template;
@@ -110,18 +110,18 @@
                      alert("");
                  });
              } */
-
+str1 = "Ben"; str2 = "Izzy";
         sidebar.events.on("Click", function (id, e) {
             // alert(id); */
             if (id == "dashboard") {
                 datav.filter(function (item) {
 
-                    return item.value == "Ben" || item.value == "Izzy";
+                    return item.value == str1 || item.value == str2;
 
                 });
             }
 
-            else if (id == "statistics") { alert("stat"); }
+            else if (id == "statistics") { datav.filter() }
             else if (id == "reports") { alert("f") }
             else if (id == "addPost") { alert("h") }
             else if (id == "allPost") { alert("j") }
