@@ -103,17 +103,25 @@
         });
         layout.getCell("content").attach(dataview);
 
-        function filter () {a, s, datacollection.filter (function (item){
-
-return ((item.id >= a) && (item.id <=s));
-});
-}
+        /*   function filter() {
+                 a, s, datacollection.filter(function (item) {
+ 
+                      return ((item.id >= a) && (item.id <= s));
+                     alert("");
+                 });
+             } */
 
         sidebar.events.on("Click", function (id, e) {
-            // alert(id);
-            if (id == "dashboard") { }
+            // alert(id); */
+            if (id == "dashboard") {
+                datav.filter(function (item) {
 
-            else if (id == "statistics") { }
+                    return item.value == "Ben" || item.value == "Izzy";
+
+                });
+            }
+
+            else if (id == "statistics") { alert("stat"); }
             else if (id == "reports") { alert("f") }
             else if (id == "addPost") { alert("h") }
             else if (id == "allPost") { alert("j") }
